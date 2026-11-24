@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +9,7 @@ public class Bank {
     public void openAccount(String name) {
 
         Account account = new Account(nextAccountNumber, name, 0);
+
         accounts.add(account);
 
         System.out.println("Account created successfully!");
@@ -30,7 +30,6 @@ public class Bank {
         return null;
     }
 
-
     public void listAccounts() {
 
         if (accounts.isEmpty()) {
@@ -39,10 +38,15 @@ public class Bank {
         }
 
         for (Account account : accounts) {
+
             account.displayAccountDetails();
+
             System.out.println("-------------------");
         }
     }
 
+    public List<Account> getAccounts() {
+        return accounts;
+    }
 }
 
